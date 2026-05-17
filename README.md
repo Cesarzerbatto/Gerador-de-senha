@@ -1,29 +1,19 @@
-# 🔐 Password Generator in Python
+import random
+import string
 
-Gerador de senhas desenvolvido em Python com validação dinâmica de entrada, geração aleatória de senhas e estrutura escalável. O projeto foi criado com foco em lógica de programação, manipulação de strings, validação de dados do usuário e desenvolvimento de código limpo e organizado.
+numero = int(input('Quantidade de caracteres (8 a 12): '))
 
-## 🚀 Features
-- Geração dinâmica de senhas
-- Validação de entrada do usuário
-- Senhas aleatórias com letras e números
-- Estrutura simples, limpa e escalável
-- Fácil expansão para símbolos e validações avançadas
+if numero < 8 or numero > 12:
+    print('Valor inválido.')
 
-## 🛠 Tecnologias Utilizadas
-- Python
-- random
-- string
+else:
+    caracteres = string.ascii_letters + string.digits
 
-## 📌 Objetivo do Projeto
-Este projeto demonstra fundamentos importantes de desenvolvimento de software, incluindo:
-- lógica de programação
-- resolução de problemas
-- manipulação de dados
-- organização de código
-- boas práticas de desenvolvimento
+    senha = ''
 
-## ▶️ Exemplo de Execução
-```bash
-Quantidade de caracteres (8 a 12): 10
+    for i in range(numero):
+        senha += random.choice(caracteres)
+
+    print(f'Senha gerada: {senha}')
 
 Senha gerada: A8k2Lm91Qa
